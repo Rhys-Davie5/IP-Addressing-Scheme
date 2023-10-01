@@ -1,19 +1,16 @@
-# Import the ipaddress module
 import ipaddress
 
-# Define the network ID
-network_id = '192.168.0.0/24'
+def generate_ip_address_scheme(network_id, subnet_mask):
+    try:
+        network = ipaddress.IPv4Network(f"{network_id}/{subnet_mask}", strict=False)
+        print(f"Network: {network.network_address}")
+        print(f"Netmask: {network.netmask}")
+        print(f"First IP Address: {network.network_address + 1}")
+        print(f"Last IP Address: {network.broadcast_address - 1}")
+    except ipaddress.AddressValueError as e:
+        print(f"Error: {e}")
 
-# Create an IPv4Network object from the network ID
-network = ipaddress.IPv4Network(network_id)
-
-# Print the network ID and subnet mask
-print(f'Network ID: {network.network_address}')
-print(f'Subnet Mask: {network.netmask}')
-
-# Print the first and last usable IP addresses in the network
-print(f'First Usable IP Address: {network.network_address + 1}')
-print(f'Last Usable IP Address: {network.broadcast_address - 1}')
-
-# Print the total number of usable IP addresses in the network
-print(f'Total Usable IP Addresses: {network.num_addresses - 2}')
+if __name__ == "__main__":
+    network_id = input("Enter the network ID (e.g., 192.168.1.0): ")
+    subnet_mask = input("Enter the subnet mask (e.g., 255.255.255.0): ")
+    generate_ip_address_scheme(network_id, subnet_mask)
