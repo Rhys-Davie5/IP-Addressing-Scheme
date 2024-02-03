@@ -37,21 +37,21 @@ from prettytable import PrettyTable
         print("-----------------------------------------------------------------------------------------------")
 
  # Print the network ID, subnet mask, broadcast ID, and the maximum possible number of hosts
- print(f"Network ID: {network.network_address}")
-print(f"Subnet mask: {ip_interface.netmask}")
- print(f"First usable IP address: {first_usable}")
-print(f"Last usable IP address: {last_usable}")
-print(f"Broadcast ID: {network.broadcast_address}")
- print(f"Maximum possible number of hosts: {network.num_addresses - 2}")  # Subtracting network and broadcast addresses
+     print(f"Network ID: {network.network_address}")
+    print(f"Subnet mask: {ip_interface.netmask}")
+     print(f"First usable IP address: {first_usable}")
+    print(f"Last usable IP address: {last_usable}")
+    print(f"Broadcast ID: {network.broadcast_address}")
+     print(f"Maximum possible number of hosts: {network.num_addresses - 2}")  # Subtracting network and broadcast addresses
 
     except ValueError as e:
         print(f"Error: {e}")
 
-while True:
-    # Prompt the user for the IP address and subnet mask
+    while True:
+# Prompt the user for the IP address and subnet mask
     ip_input = input("Please enter the IP address with subnet (e.g., '192.168.1.0/24'), or type 'exit' to quit: ")
     
-    # Check if the user wants to exit the loop
+# Check if the user wants to exit the loop
     if ip_input.lower() == 'exit':
         print("Exiting the program.")
         break
