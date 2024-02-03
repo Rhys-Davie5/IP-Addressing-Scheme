@@ -6,7 +6,7 @@ from prettytable import PrettyTable
     'A': '0.0.0.0/1',
     'B': '128.0.0.0/2',
     'C': '192.0.0.0/3'
-}
+    }
 
 # Print the details for each class
     for class_name, network in classes.items():
