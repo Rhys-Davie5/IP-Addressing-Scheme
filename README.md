@@ -1,7 +1,3 @@
-</head>
-<body>
-    <h1>IP Address Scheme Calculator Code</h1>
-    <pre>
 import ipaddress
 from prettytable import PrettyTable
 
@@ -53,7 +49,7 @@ def calculate_ip_scheme(ip_input):
 while True:
     # Prompt the user for the IP address and subnet mask
     ip_input = input("Please enter the IP address with subnet (e.g., '192.168.1.0/24'), or type 'exit' to quit: ")
-
+    
     # Check if the user wants to exit the loop
     if ip_input.lower() == 'exit':
         print("Exiting the program.")
@@ -61,6 +57,3 @@ while True:
 
     calculate_ip_scheme(ip_input)
     print("\n")  # Print a newline for better readability before the next prompt
-    </pre>
-</body>
-</html>
