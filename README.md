@@ -1,7 +1,3 @@
-import ipaddress
-
-from prettytable import PrettyTable
-
 # Define the classes
     classes = {
     'A': '10.0.0.0/8',
