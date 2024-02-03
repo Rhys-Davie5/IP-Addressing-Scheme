@@ -2,27 +2,21 @@ import ipaddress
 from prettytable import PrettyTable
 
 # Define the classes
-def list_network_classes():
-    # Define the network ranges for Class A, B, and C
-    class_ranges = {
-        'A': ('0.0.0.0/1', 8),
-        'B': ('128.0.0.0/2', 16),
-        'C': ('192.0.0.0/3', 24)
-    }
+classes = {
+    'A': '0.0.0.0/1',
+    'B': '128.0.0.0/2',
+    'C': '192.0.0.0/3'
+}
 
-    # Function to print networks from a generator
-    def print_networks(networks, class_name):
-        print(f"\nClass {class_name} networks:")
-        for network in networks:
-            print(network)
+# Print the details for each class
+for class_name, network in classes.items():
+    # Create a new table for each class
+    table = PrettyTable(['Prefix', 'Netmask'])
 
-    # Generate and print Class A, B, and C networks
-    for class_name, (network_range, new_prefix) in class_ranges.items():
-        networks = ipaddress.ip_network(network_range, strict=False).subnets(new_prefix=new_prefix)
-        print_networks(networks, class_name)
-
-# Call the function to list network classes
-list_network_classes()
+    for prefix in range(1, 33):
+        net = ipaddress.ip_network(f'{network.split("/")[0]}/{prefix}', strict=False)
+        # Add the details to the table
+        table.add_row([prefix, str(net.netmask)])
 
     # Print the table
     print(f'\nClass {class_name}:')
