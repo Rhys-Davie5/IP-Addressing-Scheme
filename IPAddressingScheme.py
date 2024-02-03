@@ -48,7 +48,7 @@ def calculate_ip_scheme(ip_input):
 
 while True:
     # Prompt the user for the IP address and subnet mask
-    ip_input = input("Please enter the IP address with subnet (e.g., '192.168.1.0/24'), or type 'exit' to quit: ")
+    ip_input = input("Enter the IP address with subnet (e.g., '192.168.1.0/24'), or type 'exit' to quit: ")
     
     # Check if the user wants to exit the loop
     if ip_input.lower() == 'exit':
