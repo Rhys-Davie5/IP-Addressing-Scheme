@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Address Scheme Calculator</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        pre {
-            background-color: #eaeaea;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <h1>IP Address Scheme Calculator Code</h1>
